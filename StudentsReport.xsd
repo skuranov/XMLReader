@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.epam.com/StudentsReport" xmlns:tns="http://www.epam.com/StudentsReport" elementFormDefault="qualified">
+
+    <include schemaLocation=""></include>
+    
+    <element name="teachingCenter" type="tns:teachingCenter">
+	    <unique name="uniqueStudent">
+	      <selector xpath="tns:students/tns:student"/>
+	      <field xpath="@email"/>
+	      <field xpath="@fullName"/>
+	    </unique>
+ 	   
+	    <key name="pCourseName">
+	      <selector xpath="tns:courses/tns:course"/>
+	      <field xpath="@courseName"/>
+    	</key>
+
+	    <keyref name="pCourseNameRef" refer="tns:pCourseName">
+	      <selector xpath="tns:programs/tns:program/tns:courseName"/>
+	      <field xpath="@courceName"/>
+	    </keyref>
+	    
+	    <!--Synchronizing student programs -->
+	    
+	    <key name="uniqueFullProgramName">
+	      <selector xpath="tns:programs/tns:fullProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="uniqueShortProgramName">
+	      <selector xpath="tns:programs/tns:shortProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="uniqueSpecialProgram1Name">
+	      <selector xpath="tns:programs/tns:specialProgram1/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="FullProgramName">
+	      <selector xpath="tns:programs/tns:fullProgram"/>
+	      <field xpath="@programName"/>
+	    </key>
+	    
+	    <key name="ShortProgramName">
+	      <selector xpath="tns:programs/tns:shortProgram"/>
+	      <field xpath="@programName"/>
+	    </key>
+	    
+	    <key name="SpecialProgram1Name">
+	      <selector xpath="tns:programs/tns:specialProgram1"/>
+	      <field xpath="@programName"/>
+	    </key>
+	    
+	    <keyref name="FullProgramNameRef" refer="tns:FullProgramName">
+	      <selector xpath="tns:students/tns:student/tns:fullProgram"/>
+	      <field xpath="@programName"/>
+	    </keyref>
+	    
+	    <keyref name="ShortProgramNameRef" refer="tns:ShortProgramName">
+	      <selector xpath="tns:students/tns:student/tns:shortProgram"/>
+	      <field xpath="@programName"/>
+	    </keyref>
+	    
+	    <keyref name="SpecialProgram1NameRef" refer="tns:SpecialProgram1Name">
+	      <selector xpath="tns:students/tns:student/tns:specialProgram1"/>
+	      <field xpath="@programName"/>
+	    </keyref>
+	    
+	     <!--Synchronizing student courses -->
+	    
+	    <key name="uniqueFullProgramCourse">
+	      <selector xpath="tns:programs/tns:fullProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="uniqueShortProgramCourse">
+	      <selector xpath="tns:programs/tns:shortProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="uniqueSpecialProgram1Course">
+	      <selector xpath="tns:programs/tns:specialProgram1/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="FullProgramCourse">
+	      <selector xpath="tns:programs/tns:fullProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="ShortProgramCourse">
+	      <selector xpath="tns:programs/tns:shortProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <key name="SpecialProgram1Course">
+	      <selector xpath="tns:programs/tns:specialProgram1/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </key>
+	    
+	    <keyref name="FullProgramCourseRef" refer="tns:FullProgramCourse">
+	      <selector xpath="tns:students/tns:student/tns:fullProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </keyref>
+	    
+	    <keyref name="ShortProgramCourseRef" refer="tns:ShortProgramCourse">
+	      <selector xpath="tns:students/tns:student/tns:shortProgram/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </keyref>
+	    
+	    <keyref name="SpecialProgram1CourseRef" refer="tns:SpecialProgram1Course">
+	      <selector xpath="tns:students/tns:student/tns:specialProgram1/tns:course"/>
+	      <field xpath="@courseName"/>
+	    </keyref>
+	    
+	    
+	    <!--Synchronizing tasks -->
+	 
+	    <key name="theoryTaskKey">
+	      <selector xpath="tns:courses/tns:course/tns:theoryTask"/>
+	      <field xpath="@taskName"/>
+	      <field xpath="@taskId"/>
+	    </key>
+	    
+	    <key name="practicalTaskKey">
+	      <selector xpath="tns:courses/tns:course/tns:practicalTask"/>
+	      <field xpath="@taskName"/>
+	      <field xpath="@taskId"/>
+	    </key>
+	       
+	    <keyref name="theoryTaskRef" refer="tns:theoryTaskKey">
+	      <selector xpath="tns:students/tns:student/tns:courses/tns:cource/tns:theoryTask"/>
+	      <field xpath="@taskName"/>
+	      <field xpath="@taskId"/>
+	    </keyref>
+	    
+	    <keyref name="practicalTaskRef" refer="tns:practicalTaskKey">
+	      <selector xpath="tns:students/tns:student/tns:courses/tns:cource/tns:practicalTask"/>
+	      <field xpath="@taskName"/>
+	      <field xpath="@taskId"/>
+	    </keyref>
+
+    </element>
+
+    <complexType name="teachingCenter">
+    	<sequence>
+    		<element name="courses" type="tns:coursesType"></element>
+    		<element name="programs" type="tns:programsType"></element>
+    		<element name="students" type="tns:studentsType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="coursesType">
+    	<sequence><element name="course" type="tns:courseType" maxOccurs="unbounded" minOccurs="0"></element></sequence>
+    </complexType>
+
+    <complexType name="programsType">
+    	<sequence>
+    		<element name="fullProgram" type="tns:fullProgram"></element>
+    		<element name="shortProgram" type="tns:shortProgram"></element>
+    		<element name="specialProgram1"
+    			type="tns:specialProgram1">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="studentsType">
+    	<sequence>
+    		<element name="student" type="tns:studentType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    
+    <complexType name="studentType">
+    	<sequence>
+    		<choice>
+    			<element name="fullProgram" type="tns:fullProgram"></element>
+    			<element name="shortProgram" type="tns:shortProgram"></element>
+    			<element name="specialProgram1"
+    				type="tns:specialProgram1">
+    			</element>
+    		</choice>
+    	</sequence>
+    	<attribute name="fullName" type="tns:shortString"></attribute>
+    	<attribute name="city" type="tns:shortString"></attribute>
+    	<attribute name="email" type="tns:e-mail"></attribute>
+    	<attribute name="startDate" type="date"></attribute>
+    	<attribute name="signedContract" type="boolean"></attribute>
+    </complexType>
+
+    <complexType name="courseType">
+    	<sequence>
+    		<element name="theoryTask" type="tns:theoryTask" maxOccurs="unbounded" minOccurs="0"></element>
+    		<element name="practicalTask" type="tns:practicalTask" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="courseName" type="tns:shortString"></attribute>
+    	<attribute name="author" type="tns:shortString"></attribute>
+    	<attribute name="birthDate" type="date"></attribute>
+    </complexType>
+
+    <simpleType name="shortString">
+    	<restriction base="string">
+    		<pattern value=".{1,70}"/>
+    	</restriction>
+    </simpleType>
+
+    <simpleType name="e-mail">
+    	<restriction base="string">
+    		<pattern value=".+\@.+\..+"/>
+    	</restriction>
+    </simpleType>
+
+    <simpleType name="theoryTaskStatus">
+    	<restriction base="string">
+    		<enumeration value="изучение не началось"></enumeration>
+    		<enumeration value="в процессе изучения"></enumeration>
+    		<enumeration value="изучение завершено"></enumeration>
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="practicalTaskStatus">
+    	<restriction base="string">
+    		<enumeration value="выполнение не началось"></enumeration>
+    		<enumeration value="в процессе выполнения"></enumeration>
+    		<enumeration value="находится на проверке"></enumeration>
+    		<enumeration value="задание принято"></enumeration>
+    	</restriction>
+    </simpleType>
+
+    <simpleType name="markType">
+    	<restriction base="integer">
+    		<minInclusive value="1"/>
+    		<maxInclusive value="5"/>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="courseNameType">
+    	<sequence>
+    	</sequence>
+    	<attribute name="courceName" type="tns:shortString"></attribute>
+    </complexType>
+
+
+    <complexType name="theoryTask">
+    	<attribute name="status" type="tns:theoryTaskStatus"></attribute>
+    	<attribute name="taskName" type="tns:shortString"></attribute>
+    	<attribute name="planTime" type="int"></attribute>
+    	<attribute name="taskId" type="int"></attribute>
+    	<attribute name="mark" type="tns:markType"></attribute>
+    </complexType>
+
+    <complexType name="practicalTask">
+   		<attribute name="status" type="tns:practicalTaskStatus"></attribute>
+    	<attribute name="taskName" type="tns:shortString"></attribute>
+    	<attribute name="planTime" type="int"></attribute>
+    	<attribute name="taskId" type="int"></attribute>
+    	<attribute name="mark" type="tns:markType"></attribute>
+    </complexType>
+
+
+    <complexType name="fullProgram">
+    	<sequence>
+            <element name="course" type="tns:courseType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+        </sequence>
+    	<attribute name="programName" type="tns:shortString"></attribute>
+    	<attribute name="author" type="tns:shortString"></attribute>
+    	<attribute name="birthDate" type="date"></attribute>
+    </complexType>
+    
+    <complexType name="shortProgram">
+    	<sequence>
+    		<element name="course" type="tns:courseType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		
+        </sequence>
+    	<attribute name="programName" type="tns:shortString"></attribute>
+    	<attribute name="author" type="tns:shortString"></attribute>
+    	<attribute name="birthDate" type="date"></attribute>
+    </complexType>
+    
+    <complexType name="specialProgram1">
+    	<sequence>
+    		<element name="course" type="tns:courseType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="programName" type="tns:shortString"></attribute>
+    	<attribute name="author" type="tns:shortString"></attribute>
+    	<attribute name="birthDate" type="date"></attribute>
+    </complexType>
+</schema>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:teachingCenter xmlns:tns="http://www.epam.com/StudentsReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.epam.com/StudentsReport StudentsReport.xsd ">
+  <tns:courses>
+    <tns:course author="Ivan Ivanov" birthDate="2010-08-31" courseName="Курс &quot;Overview of Eclipse IDE&quot;">
+      <tns:theoryTask planTime="4" taskName="Overview of Eclipse IDE" taskId="1"/>  
+    </tns:course>
+    <tns:course author="Petr Petrov" birthDate="2010-08-31" courseName="Курс &quot;Основы языка Java&quot;">
+      <tns:theoryTask planTime="12" taskName="Learning the Java Language Basics" taskId="2"/>
+      <tns:practicalTask planTime="12" taskName="Practical Task" taskId="3"/>
+    </tns:course>
+    <tns:course author="Sidor Sidorov" birthDate="2010-08-31" courseName="Курс &quot;Язык Java - расширенные возможности&quot;">
+      <tns:theoryTask planTime="17" taskName="Learning the Java Language advanced features" taskId="4"/>
+      <tns:practicalTask planTime="16" taskName="Practical Task" taskId="5"/>
+    </tns:course>
+    <tns:course author="Ivan Ivanov" birthDate="2010-08-31" courseName="Курс &quot;Язык XML&quot;">
+      <tns:theoryTask planTime="6" taskName="Learning XML Language" taskId="6"/>
+      <tns:practicalTask planTime="8" taskName="Practical Task" taskId="7"/>
+    </tns:course>
+    <tns:course author="Petr Petrov" birthDate="2010-08-31" courseName="Курс &quot;Язык XSLT и XPath&quot;">
+      <tns:theoryTask planTime="14" taskName="Learning XSLT and XPath Basics" taskId="8"/>
+      <tns:practicalTask planTime="8" taskName="Equipment Stylesheets" taskId="9"/>
+    </tns:course>
+    <tns:course author="Sidor Sidorov" birthDate="2010-08-31" courseName="Курс &quot;Технология Struts Framework&quot;">
+      <tns:theoryTask planTime="8" taskName="Struts Framework Fundamentals" taskId="10"/>
+      <tns:practicalTask planTime="40" taskName="Struts Framework Task" taskId="11"/>
+      <tns:practicalTask planTime="20" taskName="Java Message Service Task" taskId="12"/>
+    </tns:course>
+    <tns:course author="Ivan Ivanov" birthDate="2010-08-31" courseName="Курс &quot;Процесс производства программного обеспечения&quot;">
+      <tns:theoryTask planTime="3" taskName="Mastering Microsoft Project" taskId="13"/>
+      <tns:practicalTask planTime="8" taskName="MS Project Practical Task" taskId="14"/>
+      <tns:practicalTask planTime="12" taskName="Software development process. Development team and its structure" taskId="15"/>
+    </tns:course>
+    <tns:course author="Petr Petrov" birthDate="2010-08-31" courseName="Курс &quot;Процесс разработки программного обеспечения&quot;">
+      <tns:practicalTask planTime="80" taskName="Team Project" taskId="16"/>
+    </tns:course>
+  </tns:courses>
+  <tns:programs>
+    <tns:fullProgram author="Ivan Ivanov" birthDate="2010-08-31" programName="Полная программа">
+      <tns:course courseName="Курс &quot;Overview of Eclipse IDE&quot;"/>
+      <tns:course courseName="Курс &quot;Основы языка Java&quot;"/>
+      <tns:course courseName="Курс &quot;Язык Java - расширенные возможности&quot;"/>
+      <tns:course courseName="Курс &quot;Язык XML&quot;"/>
+      <tns:course courseName="Курс &quot;Язык XSLT и XPath&quot;"/>
+      <tns:course courseName="Курс &quot;Технология Struts Framework&quot;"/>
+      <tns:course courseName="Курс &quot;Процесс производства программного обеспечения&quot;"/>
+      <tns:course courseName="Курс &quot;Процесс разработки программного обеспечения&quot;"/>
+    </tns:fullProgram>
+    <tns:shortProgram author="Ivan Ivanov" birthDate="2010-08-31" programName="Укороченная программа">
+      <tns:course courseName="Курс &quot;Overview of Eclipse IDE&quot;"/>
+      <tns:course courseName="Курс &quot;Основы языка Java&quot;"/>
+      <tns:course courseName="Курс &quot;Язык Java - расширенные возможности&quot;"/>
+      <tns:course courseName="Курс &quot;Процесс производства программного обеспечения&quot;"/>
+      <tns:course courseName="Курс &quot;Процесс разработки программного обеспечения&quot;"/>
+    </tns:shortProgram>
+    <tns:specialProgram1 author="Sidor Sidorov" birthDate="2013-12-03" programName="Специальная программа 1">
+      <tns:course courseName="Курс &quot;Язык XML&quot;"/>
+      <tns:course courseName="Курс &quot;Язык XSLT и XPath&quot;"/>
+    </tns:specialProgram1>
+  </tns:programs>
+ <tns:students>
+    <tns:student city="Saratov" email="alexander_sergeev@epam.com" fullName="Alexander Sergeev" signedContract="true" startDate="2015-08-15">
+      <tns:fullProgram programName="Полная программа">	
+        <tns:course courseName="Курс &quot;Overview of Eclipse IDE&quot;">
+          <tns:theoryTask planTime="4" status="изучение завершено" taskName="Overview of Eclipse IDE" taskId="1"/>  
+        </tns:course>
+        <tns:course courseName="Курс &quot;Основы языка Java&quot;">
+          <tns:theoryTask mark="5" status="изучение завершено" taskName="Learning the Java Language Basics" taskId="2"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Practical Task" taskId="3"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык Java - расширенные возможности&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Learning the Java Language advanced features" taskId="4"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Practical Task" taskId="5"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык XML&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Learning XML Language" taskId="6"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Practical Task" taskId="7"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык XSLT и XPath&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Learning XSLT and XPath Basics" taskId="8"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Equipment Stylesheets" taskId="9"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Технология Struts Framework&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Struts Framework Fundamentals" taskId="10"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Struts Framework Task" taskId="11"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Java Message Service Task" taskId="12"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Процесс производства программного обеспечения&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Mastering Microsoft Project" taskId="13"/>
+          <tns:practicalTask status="выполнение не началось" taskName="MS Project Practical Task" taskId="14"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Software development process. Development team and its structure" taskId="15"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Процесс разработки программного обеспечения&quot;">
+          <tns:practicalTask status="выполнение не началось" taskName="Team Project" taskId="16"/>
+        </tns:course>
+      </tns:fullProgram>
+    </tns:student>
+    <tns:student city="Moskow" email="boris_romanov@epam.com" fullName="Boris Romanov" signedContract="false" startDate="2015-09-01">
+      <tns:fullProgram programName="Полная программа">	
+        <tns:course courseName="Курс &quot;Overview of Eclipse IDE&quot;">
+          <tns:theoryTask mark="1" status="изучение завершено" taskName="Overview of Eclipse IDE" taskId="1"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Основы языка Java&quot;">
+          <tns:theoryTask status="изучение завершено" taskName="Learning the Java Language Basics" taskId="2"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Practical Task" taskId="3"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык Java - расширенные возможности&quot;">
+          <tns:theoryTask mark="5" status="изучение не началось" taskName="Learning the Java Language advanced features" taskId="4"/>
+          <tns:practicalTask mark="5" status="выполнение не началось" taskName="Practical Task" taskId="5"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык XML&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Learning XML Language" taskId="6"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Practical Task" taskId="7"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык XSLT и XPath&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Learning XSLT and XPath Basics" taskId="8"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Equipment Stylesheets" taskId="9"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Технология Struts Framework&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Struts Framework Fundamentals" taskId="10"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Struts Framework Task" taskId="11"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Java Message Service Task" taskId="12"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Процесс производства программного обеспечения&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Mastering Microsoft Project" taskId="13"/>
+          <tns:practicalTask status="выполнение не началось" taskName="MS Project Practical Task" taskId="14"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Software development process. Development team and its structure" taskId="15"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Процесс разработки программного обеспечения&quot;">
+          <tns:practicalTask status="выполнение не началось" taskName="Team Project" taskId="16"/>
+        </tns:course>
+      </tns:fullProgram>
+    </tns:student>
+    <tns:student city="Izhevsk" email="vadim_petrov@epam.com" fullName="Vadim Petrov" signedContract="false" startDate="2015-08-31">
+      <tns:specialProgram1 programName="Специальная программа 1">	
+        <tns:course courseName="Курс &quot;Язык XML&quot;">
+          <tns:theoryTask mark="1" status="изучение не началось" taskName="Learning XML Language" taskId="6"/>
+          <tns:practicalTask mark="2" status="выполнение не началось" taskName="Practical Task" taskId="7"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык XSLT и XPath&quot;">
+          <tns:theoryTask mark="3" status="изучение не началось" taskName="Learning XSLT and XPath Basics" taskId="8"/>
+          <tns:practicalTask mark="4" status="выполнение не началось" taskName="Equipment Stylesheets" taskId="9"/>
+        </tns:course>
+      </tns:specialProgram1>
+    </tns:student>
+    <tns:student city="Saratov" email="ivan_fedorov@epam.com" fullName="Ivan Fedorov" signedContract="false" startDate="2015-10-15">
+      <tns:shortProgram programName="Укороченная программа">	
+        <tns:course courseName="Курс &quot;Overview of Eclipse IDE&quot;">
+          <tns:theoryTask mark="5" status="изучение завершено" taskName="Overview of Eclipse IDE" taskId="1"/>  
+        </tns:course>
+        <tns:course courseName="Курс &quot;Основы языка Java&quot;">
+          <tns:theoryTask status="изучение завершено" taskName="Learning the Java Language Basics" taskId="2"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Practical Task" taskId="3"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Язык Java - расширенные возможности&quot;">
+          <tns:theoryTask mark="5" status="изучение не началось" taskName="Learning the Java Language advanced features" taskId="4"/>
+          <tns:practicalTask mark="5" status="выполнение не началось" taskName="Practical Task" taskId="5"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Процесс производства программного обеспечения&quot;">
+          <tns:theoryTask status="изучение не началось" taskName="Mastering Microsoft Project" taskId="13"/>
+          <tns:practicalTask status="выполнение не началось" taskName="MS Project Practical Task" taskId="14"/>
+          <tns:practicalTask status="выполнение не началось" taskName="Software development process. Development team and its structure" taskId="15"/>
+        </tns:course>
+        <tns:course courseName="Курс &quot;Процесс разработки программного обеспечения&quot;">
+          <tns:practicalTask status="выполнение не началось" taskName="Team Project" taskId="16"/>
+        </tns:course>
+      </tns:shortProgram>
+    </tns:student>
+  </tns:students>
+</tns:teachingCenter>
