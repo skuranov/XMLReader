@@ -41,6 +41,7 @@ public class Data {
         Source xmlFile = new StreamSource(xmlFileName);
         SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         Schema schema = getSchema(schemaFactory,schemaFile);
+        assert schema != null;
         Validator validator = schema.newValidator();
         try {
             validator.validate(xmlFile);
